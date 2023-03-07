@@ -1,0 +1,17 @@
+{
+  "name": "slidev-rxjs",
+  "private": true,
+  "scripts": {
+    "build": "slidev build",
+    "dev": "slidev --open",
+    "export": "slidev export"
+  },
+  "dependencies": {
+    "@slidev/cli": "^0.40.3",
+    "@slidev/theme-bricks": "^0.0.2",
+    "@slidev/theme-default": "*",
+    "@slidev/theme-seriph": "*",
+    "slidev-theme-purplin": "^1.2.0",
+    "slidev-theme-zhozhoba": "^1.0.0"
+  }
+}
