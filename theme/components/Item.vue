@@ -6,6 +6,10 @@ export default {
       required: true,
       default: '@username'
     },
+    link: {
+      type: String,
+      required: false,
+    },
   },
 }
 </script>
@@ -16,7 +20,14 @@ export default {
       <slot />
     </span>
     <span class="ml-0.5">
-      {{text}}
+      <div v-if="link">
+        <a v-bind:href="link" target="_blank>">
+          {{text}}
+        </a>
+      </div>
+      <div v-else>
+        {{text}}
+      </div>
     </span>
   </div>
 </template>
