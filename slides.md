@@ -19,46 +19,42 @@ title: RxJS
 layout: intro
 ---
 
-## `<BarBottom />` component
+## RxJS是什么？
 
 <br />
 <br />
 
 <div class="grid grid-cols-2 gap-x-4">
 <div>
-This component displays a bar at the bottom of the slide. The component needs to be added to each slide where we want to display it.
+<br />
+<br />
+<br />
 
-Receives a `title` prop that is the text displayed on the left.
-
-This component uses `slots` to add items on the right. Exist an `<Item />` component that receives a `text` prop and uses `slots` to add the icon/image.
-
-Exist a large [list of icon collections](https://icones.js.org/collection) available that you can use. These icons are imported automatically by _slidev_, you don't need to configure anything else to use them.
+- 一个 javascript 的工具库
+- Reactive Programming 编程范式的具体实现
+- 用于通过使用可观察序列来组合异步和基于事件的程序
 
 </div>
+
 <div>
 
-### Slide example
+### Code example
 
-```markdown
----
-layout: intro
----
+```ts
+const observable$$ = new Observable((subscriber) => {
+    subscriber.next(1);
+    subscriber.next(2);
+    //...
+    subscriber.complete();
+});
 
-# Content
+//在另一个地方订阅
+const subscription 
+    = observable$$.subscribe(next => console.log(next));
 
-<BarBottom  title="Slidev theme purplin">
-  <Item text="slidevjs/slidev">
-    <carbon:logo-github />
-  </Item>
-  <Item text="Slidevjs">
-    <carbon:logo-twitter />
-  </Item>
-  <Item text="sli.dev">
-    <carbon:link />
-  </Item>
-</BarBottom>
+//取消订阅
+subscription.unsubscribe();
 ```
-
 </div>
 </div>
 
@@ -68,7 +64,8 @@ layout: intro
 layout: intro
 ---
 
-## `<BarBottom />` with custom icons/images
+## 传统函数调用与Observables的区别
+### Observable 可以随着时间的推移返回多个值，这是函数所做不到的
 
 <br />
 <br />
@@ -76,40 +73,23 @@ layout: intro
 <div class="grid grid-cols-2 gap-x-4">
 <div>
 
-You can use your own icons/images if you want.
+传统的函数调用 -> Pull system
+- 生产者（Passive）
+  - 在请求的时候返回数据
+- 消费者（Active）
+  - 需要的时候去请求
 
-Only need to add an `<Item />` component and use `slots` features.
-
-Also, you can use [Windi CSS](https://windicss.org/) to add style to the icon, for example, adjust the width o height.
-
+### func.call() 意思是 "同步的给我一个值"
 </div>
 <div>
 
-### Slide example
+RxJS -> Push system
+- 生产者（Active）
+  - 自己主动推送消息给消费者（rxjs中的观察者）
+- 消费者（Passive） 
+  - 对接收到的数据做出反应 
 
-```markdown
----
-layout: intro
----
-
-# Content
-
-<BarBottom  title="Slidev theme purplin">
-  <Item text="slidevjs/slidev">
-    <carbon:logo-github />
-  </Item>
-  <Item text="Slidevjs">
-    <carbon:logo-twitter />
-  </Item>
-  <Item text="sli.dev">
-    <img
-      src="https://d33wubrfki0l68.cloudfront.net/273aa82ec83b3e4357492a201fb68048af1c3e6a/8f657/logo.svg"
-      class="w-4"
-    />
-  </Item>
-</BarBottom>
-```
-
+### observable.subscribe() 意思是 "给我任意数量的值，无论是同步还是异步"
 </div>
 </div>
 
@@ -188,18 +168,56 @@ Read more about [Why Slidev?](https://sli.dev/guide/why)
 
 ---
 
-# Navigation
+# 创建型操作符
 
-Hover on the bottom-left corner to see the navigation's controls panel
+用于创建具有一些常见预定义行为的Observable
 
-### Keyboard Shortcuts
+### 一些常见的创建型操作符
 
-|     |     |
-| --- | --- |
-| <kbd>space</kbd> / <kbd>tab</kbd> / <kbd>right</kbd> | next animation or slide |
-| <kbd>left</kbd> | previous animation or slide |
-| <kbd>up</kbd> | previous slide |
-| <kbd>down</kbd> | next slide |
+|                        |                                                                                                                         |
+|------------------------|-------------------------------------------------------------------------------------------------------------------------|
+| <kbd>of()</kbd>        | Converts the arguments to an observable sequence.                                                                       |
+| <kbd>interval()</kbd>  | Creates an Observable that emits sequential numbers every specified interval of time, on a specified SchedulerLike.     |
+| <kbd>from()</kbd>      | Creates an Observable from an Array, an array-like object, a Promise, an iterable object, or an Observable-like object. |
+| <kbd>fromEvent()</kbd> | Creates an Observable that emits events of a specific type coming from the given event target.                          |
+| <kbd>iif()</kbd>       | Checks a boolean at subscription time, and chooses between one of two observable source.                                |
+| <kbd>timer()</kbd>     | Creates an observable that will wait for a specified time period.                                                       |           
+
+<MyBarBottom />
+
+---
+
+# 联接创建型操作符
+
+组合多个 Observables 用以创建新的 Observable
+
+### 一些常见的创建型操作符
+
+|                            |                                                                                                                                                       |
+|----------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------|
+| <kbd>forkJoin()</kbd>      | Wait for Observables to complete and then combine last values they emitted; complete immediately if an empty array is passed.                         |
+| <kbd>combineLatest()</kbd> | Whenever any input Observable emits a value, it computes a formula using the latest values from all the inputs, then emits the output of that formula. |
+| <kbd>contact()</kbd>       | Concatenates multiple Observables together by sequentially emitting their values, one Observable after the other.|
+| <kbd>merge()</kbd>         | Flattens multiple Observables together by blending their values into one Observable.                                                       |
+| <kbd>partition()</kbd>           | It's like filter, but returns two Observables: one like the output of filter, and the other with values that did not pass the condition.                                                              |
+
+<MyBarBottom />
+
+---
+
+# 管道型操作符
+
+使用语法 observableInstance.pipe(operator()) 通过管道连接到Observables的类型
+
+### 一些常见的管道型操作符
+
+|                                                          |                                                                                                                                                                |
+|----------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| <kbd>map()</kbd>/<kbd>filter()</kbd>/<kbd>reduce()</kbd> | 类似于数组的操作                                                                                                                                                       |
+| <kbd>take()</kbd>                                        | Takes the first count values from the source, then completes.                                                                                                  |
+| <kbd>throttle()</kbd>                                    | Emits a value from the source Observable, then ignores subsequent source values for a duration determined by another Observable, then repeats this process.    |
+| <kbd>debounce()</kbd>                                    | Emits a notification from the source Observable only after a particular time span determined by another Observable has passed without another source emission. |
+| <kbd>tap()</kbd>                                         | Used to perform side-effects for notifications from the source observable.                                                                                     |
 
 <MyBarBottom />
 
