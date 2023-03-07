@@ -13,17 +13,7 @@ title: RxJS
   </span>
 </div>
 
-<BarBottom  title="RxJS入门">
-  <Item text="slidevjs/slidev">
-    <carbon:logo-github />
-  </Item>
-  <Item text="Slidevjs">
-    <carbon:logo-twitter />
-  </Item>
-  <Item text="sli.dev">
-    <carbon:link />
-  </Item>
-</BarBottom>
+<MyBarBottom />
 
 ---
 layout: intro
@@ -72,17 +62,7 @@ layout: intro
 </div>
 </div>
 
-<BarBottom  title="Slidev theme purplin">
-  <Item text="slidevjs/slidev">
-    <carbon:logo-github />
-  </Item>
-  <Item text="Slidevjs">
-    <carbon:logo-twitter />
-  </Item>
-  <Item text="sli.dev">
-    <carbon:link />
-  </Item>
-</BarBottom>
+<MyBarBottom />
 
 ---
 layout: intro
@@ -133,20 +113,7 @@ layout: intro
 </div>
 </div>
 
-<BarBottom  title="Slidev theme purplin">
-  <Item text="slidevjs/slidev">
-    <carbon:logo-github />
-  </Item>
-  <Item text="Slidevjs">
-    <carbon:logo-twitter />
-  </Item>
-  <Item text="sli.dev">
-    <img
-      src="https://d33wubrfki0l68.cloudfront.net/273aa82ec83b3e4357492a201fb68048af1c3e6a/8f657/logo.svg"
-      class="w-4"
-    />
-  </Item>
-</BarBottom>
+<MyBarBottom />
 
 ---
 layout: image-x
@@ -160,17 +127,7 @@ imageOrder: 1
 
 image 600x600
 
-<BarBottom  title="Slidev theme purplin">
-  <Item text="slidevjs/slidev">
-    <carbon:logo-github />
-  </Item>
-  <Item text="Slidevjs">
-    <carbon:logo-twitter />
-  </Item>
-  <Item text="sli.dev">
-    <carbon:link />
-  </Item>
-</BarBottom>
+<MyBarBottom />
 
 ---
 layout: image-x
@@ -206,17 +163,7 @@ position: center
 
 'position' variants: left (default), center, right
 
-<BarBottom  title="Slidev theme purplin">
-  <Item text="slidevjs/slidev">
-    <carbon:logo-github />
-  </Item>
-  <Item text="Slidevjs">
-    <carbon:logo-twitter />
-  </Item>
-  <Item text="sli.dev">
-    <carbon:link />
-  </Item>
-</BarBottom>
+<MyBarBottom />
 
 ---
 
@@ -237,17 +184,7 @@ Slidev is a slides maker and presenter designed for developers, consist of the f
 
 Read more about [Why Slidev?](https://sli.dev/guide/why)
 
-<BarBottom  title="Slidev theme purplin">
-  <Item text="slidevjs/slidev">
-    <carbon:logo-github />
-  </Item>
-  <Item text="Slidevjs">
-    <carbon:logo-twitter />
-  </Item>
-  <Item text="sli.dev">
-    <carbon:link />
-  </Item>
-</BarBottom>
+<MyBarBottom />
 
 ---
 
@@ -264,17 +201,7 @@ Hover on the bottom-left corner to see the navigation's controls panel
 | <kbd>up</kbd> | previous slide |
 | <kbd>down</kbd> | next slide |
 
-<BarBottom  title="Slidev theme purplin">
-  <Item text="slidevjs/slidev">
-    <carbon:logo-github />
-  </Item>
-  <Item text="Slidevjs">
-    <carbon:logo-twitter />
-  </Item>
-  <Item text="sli.dev">
-    <carbon:link />
-  </Item>
-</BarBottom>
+<MyBarBottom />
 
 ---
 layout: image-right
@@ -300,17 +227,7 @@ function updateUser(id: number, update: Partial<User>) {
 }
 ```
 
-<BarBottom  title="Slidev theme purplin">
-  <Item text="slidevjs/slidev">
-    <carbon:logo-github />
-  </Item>
-  <Item text="Slidevjs">
-    <carbon:logo-twitter />
-  </Item>
-  <Item text="sli.dev">
-    <carbon:link />
-  </Item>
-</BarBottom>
+<MyBarBottom />
 
 ---
 layout: center
@@ -321,14 +238,4 @@ class: "text-center"
 
 [Documentations](https://sli.dev) / [GitHub Repo](https://github.com/slidevjs/slidev)
 
-<BarBottom  title="Slidev theme purplin">
-  <Item text="slidevjs/slidev">
-    <carbon:logo-github />
-  </Item>
-  <Item text="Slidevjs">
-    <carbon:logo-twitter />
-  </Item>
-  <Item text="sli.dev">
-    <carbon:link />
-  </Item>
-</BarBottom>
+<MyBarBottom />

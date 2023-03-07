@@ -21,7 +21,7 @@ export default {
     </span>
     <span class="ml-0.5">
       <div v-if="link">
-        <a v-bind:href="link" target="_blank>">
+        <a v-bind:href="link" style="border: none;" target="_blank">
           {{text}}
         </a>
       </div>
