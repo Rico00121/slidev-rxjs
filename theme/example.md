@@ -1,11 +1,14 @@
 ---
-theme: ./theme
-title: RxJS
+# replace "./" with "purplin"
+# when you copy this example.md file over
+# to your own slidev environment and install
+# purplin as a module
+theme: ./
 ---
 
-# RxJS
+# Slidev Theme Purplin
 
-用响应式编程来改善你的 Web 应用
+Presentation slides for developers
 
 <div class="pt-12">
   <span @click="next" class="px-2 p-1 rounded cursor-pointer hover:bg-white hover:bg-opacity-10">
@@ -13,7 +16,7 @@ title: RxJS
   </span>
 </div>
 
-<BarBottom  title="RxJS入门">
+<BarBottom  title="Slidev theme purplin">
   <Item text="slidevjs/slidev">
     <carbon:logo-github />
   </Item>
@@ -223,7 +226,7 @@ position: center
 # What is Slidev?
 
 Slidev is a slides maker and presenter designed for developers, consist of the following features
-
+  
 - 📝 **Text-based** - focus on the content with Markdown, and then style them later
 - 🎨 **Themable** - theme can be shared and used with npm packages
 - 🧑‍💻 **Developer Friendly** - code highlighting, live coding with autocompletion
