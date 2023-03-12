@@ -2,7 +2,6 @@
 theme: ./theme
 title: RxJS
 ---
-
 # RxJS
 
 用响应式编程来改善你的 Web 应用
@@ -16,23 +15,49 @@ title: RxJS
 <MyBarBottom />
 
 ---
-layout: intro
+layout: image-x
+image: 'images\RxJS-custom-operators.jpg'
+imageOrder: 2
 ---
 
 ## RxJS是什么？
+### What is RxJS
+
+<br />
+
+<div style="padding-right: 40px;">
+
+- 一个 javascript 的工具库
+- Reactive Programming 编程范式的具体实现
+- 基于事件的 “Lodash”
+
+</div>
+
+<MyBarBottom />
+
+---
+layout: intro
+---
 
 <br />
 <br />
 
 <div class="grid grid-cols-2 gap-x-4">
-<div>
-<br />
+<div style="padding-left: 20px;">
 <br />
 <br />
 
-- 一个 javascript 的工具库
-- Reactive Programming 编程范式的具体实现
-- 用于通过使用可观察序列来组合异步和基于事件的程序
+
+## 核心关注点
+### Core steps
+
+<br />
+
+- 创建
+- 订阅
+- 执行
+- 清理
+
 
 </div>
 
@@ -50,7 +75,10 @@ const observable$ = new Observable((subscriber) => {
 
 //在另一个地方订阅
 const subscription 
-    = observable$.subscribe(next => console.log(next));
+    = observable$.subscribe(next => {
+        //响应收到的值，做一些操作
+        console.log(next);
+      });
 
 //取消订阅
 subscription.unsubscribe();
@@ -97,72 +125,40 @@ RxJS -> Push system
 
 ---
 layout: image-x
-image: 'https://user-images.githubusercontent.com/13499566/138951075-018e65d5-b5fe-4200-9ea7-34315b1764da.jpg'
+image: 'images\rocket.jpg'
 imageOrder: 1
 ---
 
-# layout: image-x
+## Observable的卫星类型
+### Core type
 
-imageOrder: 1
+<br/>
 
-image 600x600
+<br/>
+
+#### Observer
+
+<br/>
+
+#### Subject
+
+<br/>
+
+#### Scheduler
+
+<br/>
 
 <MyBarBottom />
-
----
-layout: image-x
-image: 'https://user-images.githubusercontent.com/13499566/138950866-7d2addb2-fe3f-41f5-aab6-d35688516612.jpg'
-imageOrder: 2
----
-
-# layout: image-x
-
-imageOrder: 2
-
-image 1080x1920
-
-<BarBottom  title="Slidev theme purplin">
-  <Item text="slidevjs/slidev">
-    <carbon:logo-github />
-  </Item>
-  <Item text="Slidevjs">
-    <carbon:logo-twitter />
-  </Item>
-  <Item text="sli.dev">
-    <carbon:link />
-  </Item>
-</BarBottom>
 
 ---
 layout: quote
 position: center
 ---
 
-# "layout: quote"
-position: center
+# Operators
+The most useful part
 
-'position' variants: left (default), center, right
-
-<MyBarBottom />
-
----
-
-# What is Slidev?
-
-Slidev is a slides maker and presenter designed for developers, consist of the following features
-
-- 📝 **Text-based** - focus on the content with Markdown, and then style them later
-- 🎨 **Themable** - theme can be shared and used with npm packages
-- 🧑‍💻 **Developer Friendly** - code highlighting, live coding with autocompletion
-- 🤹 **Interactive** - embedding Vue components to enhance your expressions
-- 🎥 **Recording** - built-in recording and camera view
-- 📤 **Portable** - export into PDF, PNGs, or even a hostable SPA
-- 🛠 **Hackable** - anything possible on a webpage
-
-<br>
-<br>
-
-Read more about [Why Slidev?](https://sli.dev/guide/why)
+以声明方式轻松组合复杂异步代码的基本部分
 
 <MyBarBottom />
 
@@ -221,31 +217,6 @@ Read more about [Why Slidev?](https://sli.dev/guide/why)
 
 <MyBarBottom />
 
----
-layout: image-right
-image: 'https://user-images.githubusercontent.com/13499566/138950614-52ec045b-aa93-4d52-91df-b782cc9c7143.jpg'
----
-
-# Code
-
-Use code snippets and get the highlighting directly!
-
-```ts
-interface User {
-  id: number
-  firstName: string
-  lastName: string
-  role: string
-}
-
-function updateUser(id: number, update: Partial<User>) {
-  const user = getUser(id)
-  const newUser = {...user, ...update}  
-  saveUser(id, newUser)
-}
-```
-
-<MyBarBottom />
 
 ---
 layout: center
@@ -254,6 +225,6 @@ class: "text-center"
 
 # Learn More
 
-[Documentations](https://sli.dev) / [GitHub Repo](https://github.com/slidevjs/slidev)
+[Documentations](https://rxjs.dev/guide/overview) / [GitHub Repo](https://github.com/ReactiveX/rxjs)
 
 <MyBarBottom />
