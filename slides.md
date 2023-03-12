@@ -172,12 +172,12 @@ The most useful part
 
 |                        |                                                                                                                         |
 |------------------------|-------------------------------------------------------------------------------------------------------------------------|
-| <kbd>of()</kbd>        | Converts the arguments to an observable sequence.                                                                       |
-| <kbd>interval()</kbd>  | Creates an Observable that emits sequential numbers every specified interval of time, on a specified SchedulerLike.     |
-| <kbd>from()</kbd>      | Creates an Observable from an Array, an array-like object, a Promise, an iterable object, or an Observable-like object. |
-| <kbd>fromEvent()</kbd> | Creates an Observable that emits events of a specific type coming from the given event target.                          |
-| <kbd>iif()</kbd>       | Checks a boolean at subscription time, and chooses between one of two observable source.                                |
-| <kbd>timer()</kbd>     | Creates an observable that will wait for a specified time period.                                                       |           
+| <kbd>of()</kbd>        | 将参数转换成一个Observable。                                                                       |
+| <kbd>interval()</kbd>  | 创建一个按指定的时间间隔发送有序数字的Observable。     |
+| <kbd>from()</kbd>      | 从一个可迭代对象，Promise对象或者Observable对象创建。Observable |
+| <kbd>fromEvent()</kbd> | 创建一个 Observable，它发出来自给定事件目标的特定类型的事件。                         |
+| <kbd>iif()</kbd>       | 在订阅时检查一个布尔值，并在两个可观察源之一之间进行选择。                                |
+| <kbd>timer()</kbd>     | 创建一个将等待指定时间段的可观察对象。                                     |           
 
 <MyBarBottom />
 
@@ -191,11 +191,11 @@ The most useful part
 
 |                            |                                                                                                                                                       |
 |----------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------|
-| <kbd>forkJoin()</kbd>      | Wait for Observables to complete and then combine last values they emitted; complete immediately if an empty array is passed.                         |
-| <kbd>combineLatest()</kbd> | Whenever any input Observable emits a value, it computes a formula using the latest values from all the inputs, then emits the output of that formula. |
-| <kbd>contact()</kbd>       | Concatenates multiple Observables together by sequentially emitting their values, one Observable after the other.|
-| <kbd>merge()</kbd>         | Flattens multiple Observables together by blending their values into one Observable.                                                       |
-| <kbd>partition()</kbd>           | It's like filter, but returns two Observables: one like the output of filter, and the other with values that did not pass the condition.                                                              |
+| <kbd>forkJoin()</kbd>      | 等待 Observables 完成，然后合并它们发出的最后值；如果传递空数组，则立即完成。                      |
+| <kbd>combineLatest()</kbd> | 每当任何输入 Observable 发出一个值时，它都会使用所有输入的最新值组合并发出。 |
+| <kbd>contact()</kbd>       | 通过顺序发射它们的值将多个 Observable 连接在一起，当前一个完成后，才会开启下一个。|
+| <kbd>merge()</kbd>         | 将多个 Observable 扁平化在一起，当作一条事件流来接收。                                                       |
+| <kbd>partition()</kbd>           | 它类似于过滤器，但返回两个 Observable：一个类似于过滤器的输出，另一个具有未通过条件的值。                                                             |
 
 <MyBarBottom />
 
@@ -209,11 +209,12 @@ The most useful part
 
 |                                                          |                                                                                                                                                                |
 |----------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| <kbd>map()</kbd>/<kbd>filter()</kbd>/<kbd>reduce()</kbd> | 类似于数组的操作                                                                                                                                                       |
-| <kbd>take()</kbd>                                        | Takes the first count values from the source, then completes.                                                                                                  |
-| <kbd>throttle()</kbd>                                    | Emits a value from the source Observable, then ignores subsequent source values for a duration determined by another Observable, then repeats this process.    |
-| <kbd>debounce()</kbd>                                    | Emits a notification from the source Observable only after a particular time span determined by another Observable has passed without another source emission. |
-| <kbd>tap()</kbd>                                         | Used to perform side-effects for notifications from the source observable.                                                                                     |
+| <kbd>map()</kbd>/<kbd>filter()</kbd>/<kbd>reduce()</kbd> | 类似于数组中相应函数的操作。|
+| <kbd>scan()</kbd> | 它就像 reduce，但在每次更新后发出当前累积状态。|
+| <kbd>take()</kbd>                                        | 长从源中获取指定数量前n个值，然后完成。                                                                                                  |
+| <kbd>throttle()</kbd>                                    | 从源 Observable 发出一个值，然后在另一个 Observable 确定的持续时间内忽略后续源值，然后重复此过程。    |
+| <kbd>debounce()</kbd>                                    | 只有在另一个 Observable 确定的特定时间跨度过去而没有另一个源发射时，才从源 Observable 发出通知。 |
+| <kbd>tap()</kbd>                                         | 用于对来自源可观察对象的通知执行副作用。                                                                                     |
 
 <MyBarBottom />
 
