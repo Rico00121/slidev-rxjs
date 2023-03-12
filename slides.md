@@ -225,6 +225,6 @@ class: "text-center"
 
 # Learn More
 
-[Documentations](https://rxjs.dev/guide/overview) / [GitHub Repo](https://github.com/ReactiveX/rxjs)
+[Documentations](https://rxjs.dev/guide/operators) / [GitHub Repo](https://github.com/ReactiveX/rxjs)
 
 <MyBarBottom />
