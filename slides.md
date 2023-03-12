@@ -41,7 +41,7 @@ layout: intro
 ### Code example
 
 ```ts
-const observable$$ = new Observable((subscriber) => {
+const observable$ = new Observable((subscriber) => {
     subscriber.next(1);
     subscriber.next(2);
     //...
@@ -50,7 +50,7 @@ const observable$$ = new Observable((subscriber) => {
 
 //在另一个地方订阅
 const subscription 
-    = observable$$.subscribe(next => console.log(next));
+    = observable$.subscribe(next => console.log(next));
 
 //取消订阅
 subscription.unsubscribe();
