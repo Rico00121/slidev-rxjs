@@ -75,10 +75,12 @@ const observable$ = new Observable((subscriber) => {
 
 //在另一个地方订阅
 const subscription 
-    = observable$.subscribe(next => {
-        //响应收到的值，做一些操作
-        console.log(next);
-      });
+    = observable$.subscribe(
+        {
+          next: x => console.log('got value ' + x),
+          error: err => console.error('error occurred: ' + err),
+          complete: () => console.log('done'),
+        });
 
 //取消订阅
 subscription.unsubscribe();
